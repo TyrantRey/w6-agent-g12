@@ -4,7 +4,7 @@ import json
 TOOL = {
     "name": "random_fact_tool",
     "description": "取得一則隨機的冷知識，可以用來當作旅遊行前簡報的趣味開場或結尾",
-    "parameters": {} # 這個 API 不需要輸入參數，所以保持空白
+    "parameters": {}
 }
 
 def run() -> str:
