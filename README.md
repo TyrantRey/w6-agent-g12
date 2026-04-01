@@ -24,8 +24,8 @@
 
 | 姓名 | 負責功能     | 檔案      | 使用的 API |
 | ---- | ------------ | --------- | ---------- |
-|      |              | `tools/`  |            |
-|      |              | `tools/`  |            |
+|      |            | `tools/`  |           |
+|   邱家悅   |      新增隨機冷知識 Tool           | `tools/`  |     https://uselessfacts.jsph.pl/api/v2/facts/random        |
 |      |              | `tools/`  |            |
 |      | Skill 整合   | `skills/` | —          |
 |      | Agent 主程式 | `main.py` | —          |
@@ -75,12 +75,12 @@ python main.py
 
 ## 各功能說明
 
-### [功能名稱]（負責：姓名）
+### [功能名稱]（負責：邱家悅）
 
-- **Tool 名稱**：
-- **使用 API**：
+- **Tool 名稱**：fact_tool 
+- **使用 API**：https://uselessfacts.jsph.pl/api/v2/facts/random
 - **輸入**：
-- **輸出範例**：
+- **輸出範例**：隨機冷知識：Bruce Lee was so fast that they had to slow the film down so you could see his moves.
 
 ```python
 TOOL = {
