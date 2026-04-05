@@ -61,8 +61,8 @@ def search_attractions(query: str, max_results: int = 5) -> str:
     lines = [f"🔍 搜尋結果：「{query}」", "─" * 42]
     for i, r in enumerate(results, 1):
         title = r.get("title", "（無標題）")
-        body  = r.get("body", "")
-        href  = r.get("href", "")
+        body = r.get("body", "")
+        href = r.get("href", "")
         lines.append(f"\n{i}. 🗺️  {title}")
         if body:
             lines.append(f"   {body}")
