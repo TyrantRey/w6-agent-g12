@@ -128,15 +128,16 @@ TOOL = {
 - **輸入**：
 - **輸出範例**：
 
-### Skill：[Skill 名稱]（負責：姓名）
+### Skill：景點探索簡報（負責：張紹謙）
 
-- **組合了哪些 Tool**：
-- **執行順序**：
+- 組合了哪些 Tool：search_attractions、random_fact_tool
+- 執行順序：
 
 ```
-Step 1: 呼叫 ___ → 取得 ___
-Step 2: 呼叫 ___ → 取得 ___
-Step 3: 組合輸出 → 產生 ___
+Step 1: 呼叫 search_attractions(query="城市 景點推薦", max_results=5) → 取得景點清單（標題、摘要、連結）
+Step 2: 篩選並整理與使用者偏好相關的景點，組織成有推薦理由的建議
+Step 3: 呼叫 random_fact_tool() → 取得一則冷知識
+Step 4: 組合輸出 → 產生含景點推薦與趣味收尾的探索簡報
 ```
 
 ---
