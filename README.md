@@ -24,7 +24,7 @@
 
 | 姓名 | 負責功能     | 檔案      | 使用的 API |
 | ---- | ------------ | --------- | ---------- |
-|      |            | `tools/`  |           |
+|    劉嘉鎔  |   當地美食搜尋         | `tools/food_search_tool.py`  | DuckDuckGo          |
 |   邱家悅   |      新增隨機冷知識 Tool           | `tools/fact_tool.py`  |     https://uselessfacts.jsph.pl/api/v2/facts/random        |
 |   龎靚伊   |      搜尋當地熱門景點 Tool         | `tools/search_tool.py`  |     DuckDuckGo Search (ddgs)        |
 |      |              | `tools/`  |            |
@@ -121,6 +121,26 @@ TOOL = {
 }
 ```
 
+### [當地美食搜尋]（負責：劉嘉鎔）
+
+- **Tool 名稱**：`search_local_food`
+- **使用 API**：DuckDuckGo Search (python `ddgs`)
+- **輸入**：`destination` (str), `food_type` (str, optional), `max_results` (int, default=5)
+- **輸出範例**：
+ ```python
+TOOL = {
+    "name": "search_local_food",
+    "description": "搜尋指定目的地的當地美食與特色小吃。",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "destination": {"type": "string", "description": "目的地名稱"},
+            "food_type": {"type": "string", "description": "美食類型"},
+            "max_results": {"type": "integer"}
+        },"required": ["destination"]
+    }
+}
+```
 ### [功能名稱]（負責：姓名）
 
 - **Tool 名稱**：
