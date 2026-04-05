@@ -28,8 +28,8 @@
 |   邱家悅   |      新增隨機冷知識 Tool           | `tools/fact_tool.py`  |     https://uselessfacts.jsph.pl/api/v2/facts/random        |
 |   龎靚伊   |      搜尋當地熱門景點 Tool         | `tools/search_tool.py`  |     DuckDuckGo Search (ddgs)        |
 |      |              | `tools/`  |            |
-|      | Skill 整合   | `skills/` | —          |
-|      | Agent 主程式 | `main.py` | —          |
+|  張紹謙    | Skill 整合   | `skills/` | —          |
+|  張紹謙    | Agent 主程式 | `main.py` | —          |
 
 ---
 
