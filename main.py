@@ -2,6 +2,7 @@
 
 from google.adk.agents import Agent
 from dotenv import load_dotenv
+from agents.tools import food_search_tool, fact_fool, search_tool
 
 load_dotenv()
 INSTRUCTION_PROMPT = """\
@@ -97,8 +98,9 @@ DESCRIPTION_PROMPT = """\
 """
 
 agent = Agent(
-    name="hello_agent",
+    name="agent",
     model="gemini-2.0-flash-exp",
     description=DESCRIPTION_PROMPT,
     instruction=INSTRUCTION_PROMPT,
+    tools=[food_search_tool, fact_fool, search_tool],
 )
