@@ -22,19 +22,16 @@
 
 ## 組員與分工
 
-| 姓名 | 負責功能     | 檔案      | 使用的 API |
-| ---- | ------------ | --------- | ---------- |
-<<<<<<< HEAD
-| 何平 | 取得一則今日活動建議 | `tools/activity_suggester.py` | https://bored-api.appbrewery.com/random |
-=======
-|      |            | `tools/`  |           |
-|   邱家悅   |      新增隨機冷知識 Tool           | `tools/fact_tool.py`  |     https://uselessfacts.jsph.pl/api/v2/facts/random        |
-|   龎靚伊   |      搜尋當地熱門景點 Tool         | `tools/search_tool.py`  |     DuckDuckGo Search (ddgs)        |
->>>>>>> parent of 455cc65 (Merge branch 'main' of https://github.com/TyrantRey/w6-agent-g12)
-|      |              | `tools/`  |            |
-|      |              | `tools/`  |            |
-|      | Skill 整合   | `skills/` | —          |
-|      | Agent 主程式 | `main.py` | —          |
+| 姓名   | 負責功能              | 檔案                          | 使用的 API                                       |
+| ------ | --------------------- | ----------------------------- | ------------------------------------------------ |
+| 何平   | 取得一則今日活動建議  | `tools/activity_suggester.py` | https://bored-api.appbrewery.com/random          |
+|        |                       | `tools/`                      |                                                  |
+| 邱家悅 | 新增隨機冷知識 Tool   | `tools/fact_tool.py`          | https://uselessfacts.jsph.pl/api/v2/facts/random |
+| 龎靚伊 | 搜尋當地熱門景點 Tool | `tools/search_tool.py`        | DuckDuckGo Search (ddgs)                         |
+|        |                       | `tools/`                      |                                                  |
+|        |                       | `tools/`                      |                                                  |
+|        | Skill 整合            | `skills/`                     | —                                                |
+|        | Agent 主程式          | `main.py`                     | —                                                |
 
 ---
 
@@ -100,8 +97,6 @@ TOOL = {
 }
 ```
 
-<<<<<<< HEAD
-=======
 ### 搜尋當地熱門景點（負責：龎靚伊）
 
 - **Tool 名稱**：search_attractions
@@ -132,7 +127,6 @@ TOOL = {
 }
 ```
 
->>>>>>> parent of 455cc65 (Merge branch 'main' of https://github.com/TyrantRey/w6-agent-g12)
 ### [功能名稱]（負責：姓名）
 
 - **Tool 名稱**：
