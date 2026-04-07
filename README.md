@@ -14,7 +14,7 @@
 | 使用者輸入   | Agent 行為                             | 負責組員 |
 | ------------ | -------------------------------------- | -------- |
 | （例：天氣） | 呼叫 weather_tool，查詢即時天氣        |          |
-| 景點（例：Tokyo 景點） | 呼叫 search_attractions，搜尋熱門景點與旅遊注意事項 | 龎靚伊 |
+| （例：景點） | 呼叫 search_tool，搜尋熱門景點         |          |
 | （例：建議） | 呼叫 advice_tool，取得隨機建議         |          |
 | （例：出發） | 執行 trip_briefing Skill，產出行前簡報 |          |
 
@@ -24,12 +24,11 @@
 
 | 姓名 | 負責功能     | 檔案      | 使用的 API |
 | ---- | ------------ | --------- | ---------- |
-|    劉嘉鎔  |   當地美食搜尋         | `tools/food_search_tool.py`  | DuckDuckGo          |
-|   邱家悅   |      新增隨機冷知識 Tool           | `tools/fact_tool.py`  |     https://uselessfacts.jsph.pl/api/v2/facts/random        |
-|   龎靚伊   |      搜尋當地熱門景點 Tool         | `tools/search_tool.py`  |     DuckDuckGo Search (ddgs)        |
+| 何平 | 取得一則今日活動建議 | `tools/activity_suggester.py` | https://bored-api.appbrewery.com/random |
 |      |              | `tools/`  |            |
-|  張紹謙    | Skill 整合   | `skills/` | —          |
-|  張紹謙    | Agent 主程式 | `main.py` | —          |
+|      |              | `tools/`  |            |
+|      | Skill 整合   | `skills/` | —          |
+|      | Agent 主程式 | `main.py` | —          |
 
 ---
 
@@ -76,12 +75,16 @@ python main.py
 
 ## 各功能說明
 
-### [功能名稱]（負責：邱家悅）
+### [取得一則今日活動建議]（負責：何平）
 
-- **Tool 名稱**：fact_tool 
-- **使用 API**：https://uselessfacts.jsph.pl/api/v2/facts/random
-- **輸入**：
-- **輸出範例**：隨機冷知識：Bruce Lee was so fast that they had to slow the film down so you could see his moves.
+- **Tool 名稱**：get_activity_suggestion
+- **使用 API**：https://bored-api.appbrewery.com/random
+- **輸入**：城市名稱
+- **輸出範例**：台北市，準備好迎接一場獨特的城市探險了嗎？
+
+除了品嚐夜市小吃、走訪歷史古蹟，我們為您準備了一項特別的活動：「在您最喜歡的公園撿垃圾」。這不僅能讓您以不同的視角探索台北的綠意空間，更能為這座城市貢獻一份心力，讓您的旅程更添意義！
+
+期待您在台北的精彩旅程！
 
 ```python
 TOOL = {
@@ -91,56 +94,6 @@ TOOL = {
 }
 ```
 
-### 搜尋當地熱門景點（負責：龎靚伊）
-
-- **Tool 名稱**：search_attractions
-- **使用 API**：DuckDuckGo Search（ddgs 套件）
-- **輸入**：搜尋關鍵字，例如 `Tokyo 景點`、`Paris travel tips`
-- **輸出範例**：
-
-  ```text
-  🔍 搜尋結果：「Tokyo 景點」
-  ──────────────────────────────────────────
-  1. 🗺️  東京必去景點推薦
-     淺草寺、東京鐵塔、新宿御苑...
-     🔗 https://example.com/tokyo
-  ```
-
-```python
-TOOL = {
-    "name": "search_attractions",
-    "description": "搜尋某個城市或地點的熱門景點、旅遊注意事項或相關旅遊資訊。",
-    "parameters": {
-        "type": "object",
-        "properties": {
-            "query": {"type": "string"},
-            "max_results": {"type": "integer"}
-        },
-        "required": ["query"]
-    }
-}
-```
-
-### [當地美食搜尋]（負責：劉嘉鎔）
-
-- **Tool 名稱**：`search_local_food`
-- **使用 API**：DuckDuckGo Search (python `ddgs`)
-- **輸入**：`destination` (str), `food_type` (str, optional), `max_results` (int, default=5)
-- **輸出範例**：
- ```python
-TOOL = {
-    "name": "search_local_food",
-    "description": "搜尋指定目的地的當地美食與特色小吃。",
-    "parameters": {
-        "type": "object",
-        "properties": {
-            "destination": {"type": "string", "description": "目的地名稱"},
-            "food_type": {"type": "string", "description": "美食類型"},
-            "max_results": {"type": "integer"}
-        },"required": ["destination"]
-    }
-}
-```
 ### [功能名稱]（負責：姓名）
 
 - **Tool 名稱**：
@@ -148,16 +101,22 @@ TOOL = {
 - **輸入**：
 - **輸出範例**：
 
-### Skill：景點探索簡報（負責：張紹謙）
+### [功能名稱]（負責：姓名）
 
-- 組合了哪些 Tool：search_attractions、random_fact_tool
-- 執行順序：
+- **Tool 名稱**：
+- **使用 API**：
+- **輸入**：
+- **輸出範例**：
+
+### Skill：[Skill 名稱]（負責：姓名）
+
+- **組合了哪些 Tool**：
+- **執行順序**：
 
 ```
-Step 1: 呼叫 search_attractions(query="城市 景點推薦", max_results=5) → 取得景點清單（標題、摘要、連結）
-Step 2: 篩選並整理與使用者偏好相關的景點，組織成有推薦理由的建議
-Step 3: 呼叫 random_fact_tool() → 取得一則冷知識
-Step 4: 組合輸出 → 產生含景點推薦與趣味收尾的探索簡報
+Step 1: 呼叫 ___ → 取得 ___
+Step 2: 呼叫 ___ → 取得 ___
+Step 3: 組合輸出 → 產生 ___
 ```
 
 ---
@@ -168,16 +127,10 @@ Step 4: 組合輸出 → 產生含景點推薦與趣味收尾的探索簡報
 
 > 寫下這次實作遇到最困難的事，以及怎麼解決的
 
-> 因為使用 Antigravity 進行 vibe coding，實作過程相對順暢。最難的部分反而是理解 `TOOL` 宣告的格式，不確定 `parameters` 的結構要怎麼寫，以及 ddgs 套件的安裝名稱和 import 名稱不一致（`pip install ddgs` 但 `from ddgs import DDGS`），需要查文件才確認正確用法。
-
 ### Tool 和 Skill 的差別
 
 > 用自己的話說說，做完後你怎麼理解兩者的不同
 
-> Tool 是單一功能的執行單元，只做一件事，例如搜尋景點；Skill 則是把多個 Tool 組合起來，依照順序執行並整合結果，產出更完整的輸出。Tool 像是工具箱裡的單一工具，Skill 像是一套完整的操作流程。
-
 ### 如果再加一個功能
 
 > 如果可以多加一個 Tool，你會加什麼？為什麼？
-
-> 我會加一個「匯率換算 Tool」，因為出國旅遊一定會需要換錢，知道當地景點之後馬上能查匯率，讓 Agent 更實用。
