@@ -24,7 +24,13 @@
 
 | 姓名 | 負責功能     | 檔案      | 使用的 API |
 | ---- | ------------ | --------- | ---------- |
+<<<<<<< HEAD
 | 何平 | 取得一則今日活動建議 | `tools/activity_suggester.py` | https://bored-api.appbrewery.com/random |
+=======
+|      |            | `tools/`  |           |
+|   邱家悅   |      新增隨機冷知識 Tool           | `tools/fact_tool.py`  |     https://uselessfacts.jsph.pl/api/v2/facts/random        |
+|   龎靚伊   |      搜尋當地熱門景點 Tool         | `tools/search_tool.py`  |     DuckDuckGo Search (ddgs)        |
+>>>>>>> parent of 455cc65 (Merge branch 'main' of https://github.com/TyrantRey/w6-agent-g12)
 |      |              | `tools/`  |            |
 |      |              | `tools/`  |            |
 |      | Skill 整合   | `skills/` | —          |
@@ -94,6 +100,39 @@ TOOL = {
 }
 ```
 
+<<<<<<< HEAD
+=======
+### 搜尋當地熱門景點（負責：龎靚伊）
+
+- **Tool 名稱**：search_attractions
+- **使用 API**：DuckDuckGo Search（ddgs 套件）
+- **輸入**：搜尋關鍵字，例如 `Tokyo 景點`、`Paris travel tips`
+- **輸出範例**：
+
+  ```text
+  🔍 搜尋結果：「Tokyo 景點」
+  ──────────────────────────────────────────
+  1. 🗺️  東京必去景點推薦
+     淺草寺、東京鐵塔、新宿御苑...
+     🔗 https://example.com/tokyo
+  ```
+
+```python
+TOOL = {
+    "name": "search_attractions",
+    "description": "搜尋某個城市或地點的熱門景點、旅遊注意事項或相關旅遊資訊。",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "query": {"type": "string"},
+            "max_results": {"type": "integer"}
+        },
+        "required": ["query"]
+    }
+}
+```
+
+>>>>>>> parent of 455cc65 (Merge branch 'main' of https://github.com/TyrantRey/w6-agent-g12)
 ### [功能名稱]（負責：姓名）
 
 - **Tool 名稱**：
