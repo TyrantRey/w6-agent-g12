@@ -22,14 +22,14 @@
 
 ## 組員與分工
 
-| 姓名   | 負責功能              | 檔案                        | 使用的 API                                       |
-| ------ | --------------------- | --------------------------- | ------------------------------------------------ |
-| 劉嘉鎔 | 當地美食搜尋          | `tools/food_search_tool.py` | DuckDuckGo                                       |
-| 邱家悅 | 新增隨機冷知識 Tool   | `tools/fact_tool.py`        | https://uselessfacts.jsph.pl/api/v2/facts/random |
-| 龎靚伊 | 搜尋當地熱門景點 Tool | `tools/search_tool.py`      | DuckDuckGo Search (ddgs)                         |
-| 何平 | 取得一則今日活動建議 | `tools/activity_suggester.py` | https://bored-api.appbrewery.com/random |
-| 張紹謙 | Skill 整合            | `skills/`                   | —                                                |
-| 張紹謙 | Agent 主程式          | `main.py`                   | —                                                |
+| 姓名   | 負責功能              | 檔案                          | 使用的 API                                       |
+| ------ | --------------------- | ----------------------------- | ------------------------------------------------ |
+| 劉嘉鎔 | 當地美食搜尋          | `tools/food_search_tool.py`   | DuckDuckGo                                       |
+| 邱家悅 | 新增隨機冷知識 Tool   | `tools/fact_tool.py`          | https://uselessfacts.jsph.pl/api/v2/facts/random |
+| 龎靚伊 | 搜尋當地熱門景點 Tool | `tools/search_tool.py`        | DuckDuckGo Search (ddgs)                         |
+| 何平   | 取得一則今日活動建議  | `tools/activity_suggester.py` | https://bored-api.appbrewery.com/random          |
+| 張紹謙 | Skill 整合            | `skills/`                     | —                                                |
+| 張紹謙 | Agent 主程式          | `main.py`                     | —                                                |
 
 
 ---
@@ -67,11 +67,13 @@ python main.py
 
 ## 執行結果
 
-> 貼上程式執行的實際範例輸出
 
-```
-（貼上執行結果，例如下的指令與輸出結果）
-```
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+---
+
+
 
 ---
 
